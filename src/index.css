@@ -66,3 +66,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+/* index.css */
+
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: Roboto, sans-serif; }
+
+html, body {
+  direction: rtl;
+}
+

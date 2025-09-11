@@ -14,9 +14,11 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.2",
     "@mui/material": "^7.3.2",
+    "ra-language-farsi": "^5.1.0",
     "react": "^19.1.1",
     "react-admin": "^5.11.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "stylis-plugin-rtl": "^2.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

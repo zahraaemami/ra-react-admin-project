@@ -12,7 +12,42 @@ const dataProvider: DataProvider = {
   // GET LIST
   getList: async (resource: string, params: GetListParams) => {
     // برای ساده بودن: بدون پیجینیشن/فیلتر خاص؛ اگر خواستی پارامترها را تبدیل می‌کنم
-    const url = buildUrl(resource);
+    // const { page, perPage } = params.pagination;
+    // const { field, order } = params.sort;
+    // console.log(params)
+
+    // const sortType = order === 'DESC' ? '-' : '';
+    // const url = `${buildUrl(resource)}?page=${page}&page_size=${perPage}&order_by=${sortType}${field}`; 
+
+    const query: Record<string, any> = {};
+
+    // صفحه‌بندی
+    if (params.pagination) {
+      const { page, perPage } = params.pagination;
+      if (page) query.page = page;
+      if (perPage) query.page_size = perPage;
+    }
+
+    // مرتب‌سازی
+    if (params.sort && params.sort.field) {
+      const { field, order } = params.sort;
+      const sortType = order === 'DESC' ? '-' : '';
+      query.order_by = `${sortType}${field}`;
+    }
+
+    // فیلترها
+    if (params.filter && Object.keys(params.filter).length > 0) {
+      Object.entries(params.filter).forEach(([key, value]) => {
+        if (value !== undefined && value !== null && value !== '') {
+          query[key] = value;
+        }
+      });
+    }
+ 
+    // ساختن رشته‌ی کوئری
+    const queryString = new URLSearchParams(query as any).toString();
+    const url = `${buildUrl(resource)}${queryString ? `?${queryString}` : ''}`;
+
     const res = await http(url, { method: 'GET' });
     if (!res.ok) throw { status: res.status, message: await res.text() };
 
