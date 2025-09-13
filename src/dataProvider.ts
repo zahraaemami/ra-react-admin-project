@@ -83,7 +83,7 @@ const dataProvider: DataProvider = {
   update: async (resource: string, params: UpdateParams) => {
     const url = buildUrl(resource, params.id);
     const res = await http(url, {
-      method: 'PUT',
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(params.data),
     });

@@ -9,7 +9,7 @@ const CityFilters =[
 
 export function CityList(props:any) {
   return (
-    <List {...props} filters={CityFilters} perPage={25}>
+    <List {...props} filters={CityFilters} perPage={25}  sort={{field:"id",order:"ASC"}} >
       <Datagrid rowClick="edit">
         <TextField source="id" />
         <TextField source="name" />

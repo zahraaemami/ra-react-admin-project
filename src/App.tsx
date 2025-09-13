@@ -14,6 +14,8 @@ import createCache from "@emotion/cache";
 import rtlPlugin from "stylis-plugin-rtl";
 import { prefixer } from "stylis";
 import { i18nProvider } from "./i18n";
+import { UserEdit } from './users/UserEdit';
+import { UserCreate } from './users/UserCreate';
 
 const cacheRtl = createCache({
   key: "muirtl",
@@ -43,7 +45,11 @@ export default function App() {
           create={CityCreate}
           edit={CityEdit}
         />
-        <Resource name="base/admin/user" list={UserList} />
+        <Resource name="base/admin/user" 
+        list={UserList}
+        edit={UserEdit}
+        create={UserCreate}
+        />
       </Admin>
     </CacheProvider>
   );

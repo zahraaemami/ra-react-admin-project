@@ -1,5 +1,5 @@
 // src/http.ts
-export const API_BASE = import.meta.env.VITE_API_URL || 'https://api.kheradedu.com/api/v1';
+export const API_BASE = import.meta.env.VITE_API_URL || 'https://dpi.kheradedu.com/api/v1';
 
 type FetchOptions = RequestInit & { retry?: boolean };
 
