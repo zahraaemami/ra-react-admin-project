@@ -24,6 +24,23 @@ const defaultResourceMessages: any = {
       name: "نام شهر",
     },
   },
+  "base/admin/company": {
+    name: "شرکت |||| شرکت‌ها",
+    fields: {
+    id: "شناسه",
+    name: "نام شرکت",
+    hostname: "هاست",
+    admin_hostname: "هاست ادمین",
+    logo: "لوگو",
+    badge_icon: "آیکون",
+    about: "درباره",
+    landing_footer_text: "متن فوتر",
+    created_at: "تاریخ ایجاد",
+    updated_at: "آخرین بروزرسانی",
+    "admin_users[0].email": "ایمیل ادمین",
+  },
+},
+
 };
 
 // i18nProvider پویا با Proxy

@@ -1,13 +1,18 @@
 
 import React from 'react';
-import { Edit, SimpleForm, TextInput, TextField } from 'react-admin';
+import { Stack } from "@mui/material";
+
+import { Edit, SimpleForm, TextInput, TextField} from 'react-admin';
 
 export function CityEdit(props:any) {
   return (
-    <Edit title="Edit City" {...props}>
+    <Edit title="ویرایش شهر" {...props}>
       <SimpleForm>
-        <TextField source="id" />
-        <TextInput source="name" />
+         <Stack direction="row" spacing={2}>
+          <TextField source="id" />
+          <TextInput source="name" />
+         </Stack>
+        
       </SimpleForm>
     </Edit>
   );
