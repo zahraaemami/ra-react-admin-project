@@ -20,7 +20,7 @@ import Dashboard from './dashboard/Dashboard';
 import { darkTheme, lightTheme } from './thems/Thems';
 import {Route} from 'react-router'
 import StatusPage from './statusPage/StatusPage';
-import CompanyList from './company/CompanyList';
+import {CompanyList} from './company/CompanyList';
 import CompanyCreate from './company/CompanyCreate';
 import CompanyEdit from './company/CompanyEdit';
 
